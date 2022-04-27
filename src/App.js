@@ -4,7 +4,8 @@ import './App.css';
 
 //Components
 import Button from './Components/Button';
-import Item from './Components/Item';
+import Category from './Components/Category';
+
 
 //Modules
 
@@ -12,8 +13,9 @@ import Item from './Components/Item';
 function App() {
   return (
     <div className="App">
-      <Item imageUrl="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
-      <Item imageUrl="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg" />
+      <Category name="Clothing" />
+      <Category name="Jewelry" />
+      <Category name="Electronics" />
     </div>
   );
 }

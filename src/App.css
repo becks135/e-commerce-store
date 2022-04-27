@@ -47,14 +47,12 @@ button:focus{
     color:var(--secondary-font-color);
 }
 
-
-
 /*ITEM COMPONENT*/
 .item,
 .item>div{
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -64,11 +62,13 @@ button:focus{
     background-color: white;
     
     width:350px;
-    height:600px;
+    height:550px;
 }
 
 .item>div {
     padding:30px 50px;
+    width:100%;
+    height:100%;
 }
 
 .item>div p:nth-child(2){
@@ -77,4 +77,11 @@ button:focus{
 
 .item>div p:nth-child(3){
     background:blue;
+}
+
+/*CATEGORY COMPONENT*/
+.items-container{
+    display:flex;
+    flex-wrap: wrap;
+    gap:60px;
 }
