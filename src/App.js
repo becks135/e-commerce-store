@@ -5,6 +5,7 @@ import './App.css';
 //Components
 import Button from './Components/Button';
 import Category from './Components/Category';
+import Nav from './Components/Nav';
 
 
 //Modules
@@ -13,9 +14,10 @@ import Category from './Components/Category';
 function App() {
   return (
     <div className="App">
-      <Category name="Clothing" />
-      <Category name="Jewelry" />
-      <Category name="Electronics" />
+      <Nav />
+      <Category name="Clothing" id="clothing"/>
+      <Category name="Jewelry" id="jewelry"/>
+      <Category name="Electronics" id="electronics"/>
     </div>
   );
 }
