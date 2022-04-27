@@ -8,12 +8,16 @@ function Item(props){
     const price = props.price;
     
     return(
-        <>
-            <img src={imageUrl} alt={imageAlt}/>
-            <p>{title}</p>
-            <p>${price}</p>
+        <div class="item">
+            <div>
+                <div>
+                    <img src={imageUrl} alt={imageAlt}/>
+                </div>
+                <p>ITEM{title}</p>
+                <p>${price}</p>
+            </div>
             <Button label="Add to Cart"/>
-        </>
+        </div>
     )
 }
 

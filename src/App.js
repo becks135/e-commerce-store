@@ -12,10 +12,8 @@ import Item from './Components/Item';
 function App() {
   return (
     <div className="App">
-      <Button label="Add to Cart" classList="main jsss" />
-      <Button label="Checkout" classList="pop rock" />
-      <Item imageUrl="https://www.nicolebeckles.dev/assets/NicoleBeckles.jpg" />
-
+      <Item imageUrl="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+      <Item imageUrl="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg" />
     </div>
   );
 }
