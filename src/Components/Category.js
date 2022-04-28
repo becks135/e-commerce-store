@@ -13,15 +13,15 @@ function Category(props) {
 
     return (
         <div className="category" id={id}>
-        <h2>{name}</h2>
-        <div className="items-container">
-            {
-            filteredInventory.map(item=>{
-                return(
-                    <Item imageUrl={item.image} title={item.title} price={item.price.toFixed(2)}/>
-                )
-            })}
-        </div>
+            <h2>{name}</h2>
+            <div className="items-container">
+                {
+                filteredInventory.map(item=>{
+                    return(
+                        <Item imageUrl={item.image} title={item.title} price={item.price.toFixed(2)}/>
+                    )
+                })}
+            </div>
         </div>
     );
 }
