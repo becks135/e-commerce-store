@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      {/* <Category name="Clothing" id="clothing" /> */}
+      <Category name="Clothing" id="clothing" items={getFilteredResults("men's clothing").concat(getFilteredResults("women's clothing"))}/>
       <Category name="Jewellery" id="jewellery" items={getFilteredResults("jewelery")}/>
       <Category name="Electronics" id="electronics" items={getFilteredResults("electronics")} />
     </div>
