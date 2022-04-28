@@ -1,21 +1,26 @@
+import { useState } from "react";
 import Item from "./Item";
 
 function Category(props) {
     const name = props.name;
     const id = props.id;
+    // const [filteredInventory, setFilteredInventory] = useState([]);
+    // setFilteredInventory(props.items);
+    const filteredInventory=props.items;
 
     //use props name to get items from database and url?
     //or pass filtered array as props?
 
     return (
-        <div class="category" id={id}>
+        <div className="category" id={id}>
         <h2>{name}</h2>
-        <div class="items-container">
-            <Item imageUrl="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
-            <Item imageUrl="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg" />
-            <Item imageUrl="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
-            <Item imageUrl="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg" />
-            <Item imageUrl="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+        <div className="items-container">
+            {
+            filteredInventory.map(item=>{
+                return(
+                    <Item imageUrl={item.image} title={item.title} price={item.price.toFixed(2)}/>
+                )
+            })}
         </div>
         </div>
     );
