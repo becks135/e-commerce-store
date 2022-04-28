@@ -10,11 +10,11 @@ function Item(props){
     return(
         <div class="item">
             <div>
-                <div>
+                <div class="item-image">
                     <img src={imageUrl} alt={imageAlt}/>
                 </div>
-                <p>ITEM{title}</p>
-                <p>${price}</p>
+                <p class="item-title">ITEM{title}</p>
+                <p class="item-price">${price}</p>
             </div>
             <Button label="Add to Cart"/>
         </div>
