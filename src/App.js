@@ -1,5 +1,6 @@
 //Modules
-import { getDatabase, ref, onValue, push, remove } from "firebase/database"; //grab functions from firebase database
+import { getDatabase, ref, onValue, push, remove } from "firebase/database";
+import { useEffect, useState } from "react";
 
 //config
 import firebase from "./firebase";
@@ -8,10 +9,10 @@ import firebase from "./firebase";
 import "./App.css";
 
 //Components
+import PromotionBanner from "./Components/PromotionBanner";
 import Nav from "./Components/Nav";
 import Category from "./Components/Category";
-import { useEffect, useState } from "react";
-
+import Header from "./Components/Header";
 
 function App() {
   const [inventory, setInventory] = useState([]);
@@ -38,7 +39,16 @@ function App() {
 
   return (
     <div className="App">
+      <PromotionBanner announcement="Free shipping on orders over $35" />
       <Nav />
+      <Header 
+        imageSrc=""
+        imageAlt=""
+        buttonLabel="Shop Now"
+      />
+
+
+
       {/* database has separate category for men and women's clothing.
           need to combine the two categories to get one array for clothing */}
       <Category name="Clothing" id="clothing" items={getFilteredResults("women's clothing").concat(getFilteredResults("men's clothing"))}/>
