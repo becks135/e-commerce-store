@@ -14,6 +14,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
     --secondary-dark-color:#1f2232;
     --primary-light-color:#fde8e9;
     --secondary-light-color:#596475;
+    --tertiary-light-color:#F8F9FA;
     --primary-font-color:#1a1a1a;
     --secondary-font-color:white;
 
@@ -41,6 +42,7 @@ a{
 
 img{
     width:100%;
+    max-height:100%;
     object-fit:cover;
     display: block;
 }
@@ -92,30 +94,45 @@ nav button{
 }
 
 .item{
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
     border-radius: 5px;
     background-color: white;
-    border:2px solid green;
     width:350px;
     height:550px;
+}
+
+.item:hover,
+.item:focus{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .item>div {
     padding:30px 50px;
     width:100%;
     height:100%;
-    border:1px solid red;
 }
 
-.item>div p:nth-child(2){
-    background:red;
+.item-image{
+    height:75%;
+    padding-bottom:20px;
+    display:flex;
+    align-items: center;
 }
 
-.item>div p:nth-child(3){
-    background:blue;
+.item-title{
+    height:15%;
+}
+
+.item-price{
+    height:10%;
+    padding-top:10px;
 }
 
 /*CATEGORY COMPONENT*/
+.category{
+    background-color: var(--tertiary-light-color);
+}
+
 .items-container{
     display:flex;
     flex-wrap: wrap;
