@@ -41,7 +41,7 @@ function App() {
       <Nav />
       {/* database has separate category for men and women's clothing.
           need to combine the two categories to get one array for clothing */}
-      <Category name="Clothing" id="clothing" items={getFilteredResults("men's clothing").concat(getFilteredResults("women's clothing"))}/>
+      <Category name="Clothing" id="clothing" items={getFilteredResults("women's clothing").concat(getFilteredResults("men's clothing"))}/>
       <Category name="Jewellery" id="jewellery" items={getFilteredResults("jewelery")}/>
       <Category name="Electronics" id="electronics" items={getFilteredResults("electronics")} />
     </div>

@@ -13,6 +13,7 @@ function Item(props){
                 <div className="item-image">
                     <img src={imageUrl} alt={imageAlt}/>
                 </div>
+                {/* //TODO-remove "ITEM" from title */}
                 <p className="item-title">ITEM{title}</p>
                 <p className="item-price">${price}</p>
             </div>
