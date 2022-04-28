@@ -16,6 +16,8 @@ function Item(props){
                 <p className="item-title">ITEM{title}</p>
                 <p className="item-price">${price}</p>
             </div>
+            {/* if inventory amount>0 then show add to cart button
+                else show sold out button and disable */}
             <Button label="Add to Cart"/>
         </div>
     )

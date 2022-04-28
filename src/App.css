@@ -130,7 +130,7 @@ nav button{
 
 /*CATEGORY COMPONENT*/
 .category{
-    background-color: var(--tertiary-light-color);
+    /* background-color: var(--tertiary-light-color); */
 }
 
 .items-container{
