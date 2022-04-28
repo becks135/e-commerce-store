@@ -3,18 +3,18 @@ import Button from "./Button";
 
 function Item(props){
     const imageUrl = props.imageUrl;
-    const imageAlt = props.imageAlt
+    const imageAlt = props.imageAlt;
     const title = props.title;
     const price = props.price;
     
     return(
-        <div class="item">
+        <div className="item">
             <div>
-                <div class="item-image">
+                <div className="item-image">
                     <img src={imageUrl} alt={imageAlt}/>
                 </div>
-                <p class="item-title">ITEM{title}</p>
-                <p class="item-price">${price}</p>
+                <p className="item-title">ITEM{title}</p>
+                <p className="item-price">${price}</p>
             </div>
             <Button label="Add to Cart"/>
         </div>
