@@ -1,23 +1,47 @@
-//styles
-import './App.css';
+//Modules
+import { getDatabase, ref, onValue, push, remove } from "firebase/database"; //grab functions from firebase database
 
+//config
+import firebase from "./firebase";
+
+//styles
+import "./App.css";
 
 //Components
-import Button from './Components/Button';
-import Category from './Components/Category';
-import Nav from './Components/Nav';
-
-
-//Modules
+import Nav from "./Components/Nav";
+import Category from "./Components/Category";
+import { useEffect, useState } from "react";
 
 
 function App() {
+  const [inventory, setInventory] = useState([]);
+  // const [numOfItemsInCart, setNumOfItemsInCart] = useState(0);
+  // const [filteredInventory, setFilteredInventory] = useState([]);
+
+  function getInventoryFromDB(){
+    const database = getDatabase(firebase);
+    const dbRef = ref(database,"/story-inventory");
+    onValue(dbRef,response=>setInventory(response.val()));
+  }
+
+  function getFilteredResults(categoryName){
+    const filteredResult = inventory.filter(item=>item.category===categoryName);
+    console.log(inventory);
+    return filteredResult;
+  }
+
+
+  useEffect(() => {
+    getInventoryFromDB();
+    // setFilteredInventory(getFilteredResults("electronics"));
+  }, []);
+
   return (
     <div className="App">
       <Nav />
-      <Category name="Clothing" id="clothing"/>
-      <Category name="Jewelry" id="jewelry"/>
-      <Category name="Electronics" id="electronics"/>
+      {/* <Category name="Clothing" id="clothing" /> */}
+      <Category name="Jewellery" id="jewellery" items={getFilteredResults("jewelery")}/>
+      <Category name="Electronics" id="electronics" items={getFilteredResults("electronics")} />
     </div>
   );
 }
