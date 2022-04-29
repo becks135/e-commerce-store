@@ -43,7 +43,7 @@ function App() {
       <Nav />
       <Header
         imageSrc={require("./assets/jed-villejo-pumko2FFxY0-unsplash.jpg")}
-        imageAlt="three friends on sidewalk of busy street in the city laughing loudly"
+        imageAlt="three friends on sidewalk of busy street in the city laughing loudly - photographer: Jed Villejo"
         buttonLabel="Sign Up"
       />
 
