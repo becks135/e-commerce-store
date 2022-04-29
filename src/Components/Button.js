@@ -1,10 +1,10 @@
 function Button(props){
     const label = props.label;
     const classList = props.classList;
-    const clickFunction = props.clickFunction;
+    const handleFunction = props.handleFunction;
 
     return(
-        <button onClick={clickFunction} className={classList}>{label}</button>
+        <button onClick={handleFunction} className={classList}>{label}</button>
     )
 }
 

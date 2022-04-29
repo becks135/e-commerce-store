@@ -27,7 +27,7 @@ function App() {
 
   function getFilteredResults(categoryName){
     const filteredResult = inventory.filter(item=>item.category===categoryName);
-    console.log(inventory);
+    // console.log(inventory);
     return filteredResult;
   }
 
