@@ -41,19 +41,31 @@ function App() {
     <div className="App">
       <PromotionBanner announcement="Free shipping on orders over $35" />
       <Nav />
-      <Header 
-        imageSrc=""
-        imageAlt=""
-        buttonLabel="Shop Now"
+      <Header
+        imageSrc={require("./assets/jed-villejo-pumko2FFxY0-unsplash.jpg")}
+        imageAlt="three friends on sidewalk of busy street in the city laughing loudly"
+        buttonLabel="Sign Up"
       />
-
-
 
       {/* database has separate category for men and women's clothing.
           need to combine the two categories to get one array for clothing */}
-      <Category name="Clothing" id="clothing" items={getFilteredResults("women's clothing").concat(getFilteredResults("men's clothing"))}/>
-      <Category name="Jewellery" id="jewellery" items={getFilteredResults("jewelery")}/>
-      <Category name="Electronics" id="electronics" items={getFilteredResults("electronics")} />
+      <Category
+        name="Clothing"
+        id="clothing"
+        items={getFilteredResults("women's clothing").concat(
+          getFilteredResults("men's clothing")
+        )}
+      />
+      <Category
+        name="Jewellery"
+        id="jewellery"
+        items={getFilteredResults("jewelery")}
+      />
+      <Category
+        name="Electronics"
+        id="electronics"
+        items={getFilteredResults("electronics")}
+      />
     </div>
   );
 }
