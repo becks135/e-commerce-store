@@ -14,10 +14,7 @@ function Category(props) {
                     return (
                         <Item
                             key={item.id}
-                            imageUrl={item.image}
-                            imageAlt={item.title}
-                            title={item.title}
-                            price={item.price.toFixed(2)}
+                            item={item}
                         />
                     );
                 })}
