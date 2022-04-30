@@ -80,7 +80,16 @@ button:focus{
     color:var(--secondary-font-color);
 }
 
-/*TOP NAVIGATION*/
+/**Promotion Banner **/
+.top-banner{
+    text-align: center;
+    background-color: var(--secondary-dark-color);
+    color:var(--secondary-font-color);
+    font-weight: 600;
+    padding:5px 0;
+}
+
+/**TOP NAVIGATION**/
 nav{
     position:sticky;
     top:0;
@@ -98,6 +107,14 @@ nav button{
     width:auto;
     background: none;
     border:none;
+}
+
+/** HEADER **/
+header{
+    height:100vh;
+    background-image: url("./assets/jed-villejo-pumko2FFxY0-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 /** ITEM COMPONENT **/

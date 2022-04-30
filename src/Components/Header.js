@@ -2,7 +2,7 @@ import Button from "./Button";
 
 function Header(props) {
     return(
-        <>
+        <header>
             <div>
                 <img src={props.imageSrc} alt={props.imageAlt}/>
             </div>
@@ -10,7 +10,7 @@ function Header(props) {
                 <h3></h3>
                 <Button label={props.buttonLabel}/>
             </div>
-        </>
+        </header>
     )
 }
 

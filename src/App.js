@@ -60,8 +60,8 @@ function App() {
       <PromotionBanner announcement="Free shipping on orders over $35" />
       <Nav cartCount={numOfItemsInCart}/>
       <Header
-        imageSrc={require("./assets/jed-villejo-pumko2FFxY0-unsplash.jpg")}
-        imageAlt="three friends on sidewalk of busy street in the city laughing loudly - photographer: Jed Villejo"
+        // imageSrc={require("./assets/jed-villejo-pumko2FFxY0-unsplash.jpg")}
+        // imageAlt="three friends on sidewalk of busy street in the city laughing loudly - photographer: Jed Villejo"
         buttonLabel="Sign Up"
       />
 
