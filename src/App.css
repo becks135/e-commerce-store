@@ -49,6 +49,8 @@ a{
     display:inline-block;
     padding:15px;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 img{
@@ -80,9 +82,12 @@ button:focus{
 
 /*TOP NAVIGATION*/
 nav{
+    position:sticky;
+    top:0;
     display: flex;
     width:100%;
     justify-content: space-between;
+    background-color: var(--tertiary-light-color);
 }
 
 nav ul{
@@ -167,12 +172,12 @@ nav button{
     display:flex;
     align-items: center;
     justify-content: center;
-    background-color: #5c0021;
+    background-color: var(--primary-dark-color);
     width: 20px;
     height:20px;
     border-radius: 50%;
 
-    color:white;
+    color:var(--secondary-font-color);
     font-size:1rem;
     font-weight: 600;
 
