@@ -27,10 +27,7 @@ function ShoppingCartItem(props){
     }
 
     function handleRemoveButton(){
-        //remove item from shopping cart db
-        console.log(props.item.id)
         removeItemFromCart(props.item.id)
-
         //TODO: update inventory amount in inventory db
     }
 

@@ -40,6 +40,7 @@ function Item(props){
 
     function handleAddToCartClick(){
         addItemToShoppingCart(item.id);
+        //TODO: update inventory amount in inventory db
     }
     
     return (

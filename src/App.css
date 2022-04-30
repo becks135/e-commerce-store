@@ -64,7 +64,7 @@ button{
     border:1px solid var(--secondary-dark-color);
     outline:none;
     padding:10px 20px;
-    width:100%;
+    /* width:100%; */
     cursor: pointer;
 
     text-align:center;
@@ -187,9 +187,22 @@ nav button{
 }
 
 .shopping-cart{
+    position:fixed;
+    top:0;
+    right:-700px;
     width:600px;
     background-color: var(--secondary-font-color);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.show-cart{
+    right:0
+}
+
+.shopping-cart>div:first-child{
+    display:flex;
+    justify-content: space-between;
+    padding:20px;
 }
 
 .shopping-cart-item{

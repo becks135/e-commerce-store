@@ -20,6 +20,7 @@ import {
 //config
 import firebase from "../firebase";
 import { useEffect, useState } from "react";
+import toggleCart from "../modules/toggleCart";
 
 
 function ShoppingCart(){
@@ -52,28 +53,31 @@ function ShoppingCart(){
 
     return (
         <div className="shopping-cart">
+            <div>
+                <h2>Shopping Cart</h2>
+                <Button label="X" handleFunction={toggleCart} />
+            </div>
+            {/* <p>shopping cart</p> */}
             <ul>
-                {shoppingCartItems.map(item=>{
-                    return (
-                        <li key={item.id}>
-                            <ShoppingCartItem
-                                item = {item}
-                                imgSrc={item.image}
-                                imgAlt={item.title}
-                                title={item.title}
-                                quantity={item.numberInCart}
-                                price={item.price * item.numberInCart}
-                            />
-                        </li>
-                    );
-                })}
+            {shoppingCartItems.map((item) => {
+                return (
+                    <li key={item.id}>
+                        <ShoppingCartItem
+                        item={item}
+                        imgSrc={item.image}
+                        imgAlt={item.title}
+                        title={item.title}
+                        quantity={item.numberInCart}
+                        price={item.price * item.numberInCart}
+                        />
+                    </li>
+                )})}
             </ul>
             <div>
                 <p>Subtotal</p>
                 <p>CA$XXXXX</p>
             </div>
             <Button label="proceed to checkout" />
-
         </div>
     );
 }
