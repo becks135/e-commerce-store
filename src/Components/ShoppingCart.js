@@ -41,6 +41,7 @@ function ShoppingCart(){
 
             //set shoppingCartItems state variables to newly created array containing shopping cart items from database
             setShoppingCartItems(cartArray);
+            console.log(cartArray);
         })
     }
 
@@ -48,17 +49,23 @@ function ShoppingCart(){
     useEffect(()=>{
         getShoppingCartItems();
     },[])
-   
 
     return (
         <div className="shopping-cart">
             <ul>
-                <li>
-                    <ShoppingCartItem />
-                </li>
-                <li>
-                    <ShoppingCartItem />
-                </li>
+                {shoppingCartItems.map(item=>{
+                    return (
+                        <li key={item.id}>
+                            <ShoppingCartItem
+                                imgSrc={item.image}
+                                imgAlt={item.title}
+                                title={item.title}
+                                quantity={item.numberInCart}
+                                price={item.price * item.numberInCart}
+                            />
+                        </li>
+                    );
+                })}
             </ul>
             <div>
                 <p>Subtotal</p>

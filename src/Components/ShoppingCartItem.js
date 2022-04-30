@@ -1,15 +1,19 @@
 import Button from "./Button";
 
-function ShoppingCartItem(){
+function ShoppingCartItem(props){
     return(
         <div className="shopping-cart-item">
-            <div>
-                <img src="" alt="" />
+            <div className="cart-item-image">
+                <img src={props.imgSrc} alt={props.imgAlt} />
             </div>
-            <p>Title</p>
-            <p>Qty:1</p>
-            <p>CA$xxx.xx</p>
-            <Button label="Remove" />
+            <p>{props.title}</p>
+            <div>
+                <label htmlFor="quantity">Qty:</label>
+                <input type="number" name="quantity" id="quantity" value={props.quantity} />
+                {/* <p>Qty:{props.quantity}</p> */}
+                <p>CA${props.price.toFixed(2)}</p>
+                <Button label="Remove" />
+            </div>
         </div>
     )
 }
