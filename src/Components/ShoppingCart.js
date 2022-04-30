@@ -6,15 +6,7 @@ import ShoppingCartItem from "./ShoppingCartItem";
 import {
     getDatabase,
     ref,
-    set,
-    onValue,
-    query,
-    orderByChild,
-    equalTo,
-    update,
-    push,
-    remove,
-    get,
+    onValue
 } from "firebase/database";
 
 //config
@@ -59,25 +51,25 @@ function ShoppingCart(){
             </div>
             {/* <p>shopping cart</p> */}
             <ul>
-            {shoppingCartItems.map((item) => {
-                return (
-                    <li key={item.id}>
-                        <ShoppingCartItem
-                        item={item}
-                        imgSrc={item.image}
-                        imgAlt={item.title}
-                        title={item.title}
-                        quantity={item.numberInCart}
-                        price={item.price * item.numberInCart}
-                        />
-                    </li>
-                )})}
+            {
+                //if no items in shopping cart, display message indicating empty shopping cart
+                shoppingCartItems.length === 0?
+                    <li>No items in cart</li>
+                : 
+                    shoppingCartItems.map((item) => {
+                        return (
+                            <li key={item.id}>
+                                <ShoppingCartItem item={item}/>
+                            </li>
+                        )
+                    })
+            }
             </ul>
             <div>
                 <p>Subtotal</p>
                 <p>CA$XXXXX</p>
             </div>
-            <Button label="proceed to checkout" />
+            <Button label="Submit Order" />
         </div>
     );
 }
