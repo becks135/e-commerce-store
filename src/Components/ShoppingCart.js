@@ -57,6 +57,7 @@ function ShoppingCart(){
                     return (
                         <li key={item.id}>
                             <ShoppingCartItem
+                                item = {item}
                                 imgSrc={item.image}
                                 imgAlt={item.title}
                                 title={item.title}
