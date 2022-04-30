@@ -13,6 +13,7 @@ import PromotionBanner from "./Components/PromotionBanner";
 import Nav from "./Components/Nav";
 import Category from "./Components/Category";
 import Header from "./Components/Header";
+import ShoppingCart from "./Components/ShoppingCart";
 
 function App() {
   const [inventory, setInventory] = useState([]);
@@ -83,6 +84,8 @@ function App() {
         id="electronics"
         items={getFilteredResults("electronics")}
       />
+
+      <ShoppingCart />
     </div>
   );
 }

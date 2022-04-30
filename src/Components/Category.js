@@ -8,17 +8,16 @@ function Category(props) {
     return (
         <div className="category" id={id}>
             <h2>{name}</h2>
-            <div className="items-container">
+            <ul className="items-container">
                 {
                 itemsInCategory.map(item=>{
                     return (
-                        <Item
-                            key={item.id}
-                            item={item}
-                        />
+                        <li key={item.id}>
+                            <Item item={item} />
+                        </li>
                     );
                 })}
-            </div>
+            </ul>
         </div>
     );
 }

@@ -2,7 +2,7 @@
 import Button from "./Button";
 
 //Modules
-import { getDatabase, ref, set, onValue, query, orderByChild, equalTo, update, push, remove, get } from "firebase/database";
+import { getDatabase, ref, set, update, get } from "firebase/database";
 
 //config
 import firebase from "../firebase";
