@@ -1,7 +1,7 @@
 import CartIcon from "./CartIcon";
 
 
-function Nav(){
+function Nav(props){
     return(
         <nav>
             <a href="#home">Sahara</a>
@@ -11,7 +11,7 @@ function Nav(){
                 <li><a href="#electronics">Electronics</a></li>
             </ul>
 
-            <CartIcon />
+            <CartIcon cartCount={props.cartCount}/>
         </nav>
     )
 }

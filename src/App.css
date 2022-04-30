@@ -8,7 +8,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-/*VARIABLES*/
+/** VARIABLES **/
 :root{
     --primary-dark-color: #5c0021;
     --secondary-dark-color:#1f2232;
@@ -18,6 +18,8 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
     --primary-font-color:#1a1a1a;
     --secondary-font-color:white;
 }
+
+/** GENERAL STYLES **/
 
 html{
     font-size:62.5%;
@@ -31,7 +33,6 @@ body{
     letter-spacing: 0.15rem;
 }
 
-/* GENERAL STYLES*/
 p,
 h1,
 h2,
@@ -94,7 +95,7 @@ nav button{
     border:none;
 }
 
-/*ITEM COMPONENT*/
+/** ITEM COMPONENT **/
 .item,
 .item>div{
     display:flex;
@@ -141,7 +142,7 @@ nav button{
     padding-top:10px;
 }
 
-/*CATEGORY COMPONENT*/
+/** CATEGORY COMPONENT **/
 .category{
     /* background-color: var(--tertiary-light-color); */
 }
@@ -150,4 +151,34 @@ nav button{
     display:flex;
     flex-wrap: wrap;
     gap:60px;
+}
+
+/** SHOPPING CART **/
+.shopping-cart-button{
+    position:relative;
+    padding:0;
+}
+
+.shopping-cart-icon{
+    font-size: 30px;
+}
+
+.shopping-cart-counter{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5c0021;
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+
+    color:white;
+    font-size:1rem;
+    font-weight: 600;
+
+    position:absolute;
+    left:-10px;
+    bottom:0;
+
+
 }
