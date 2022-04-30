@@ -16,13 +16,27 @@ import Header from "./Components/Header";
 
 function App() {
   const [inventory, setInventory] = useState([]);
-  // const [numOfItemsInCart, setNumOfItemsInCart] = useState(0);
+  const [numOfItemsInCart, setNumOfItemsInCart] = useState(0);
   // const [filteredInventory, setFilteredInventory] = useState([]);
 
   function getInventoryFromDB(){
     const database = getDatabase(firebase);
     const dbRef = ref(database,"/story-inventory");
     onValue(dbRef,response=>setInventory(response.val()));
+  }
+
+  function getNumOfItemsInCart(){
+    const database = getDatabase(firebase);
+    const dbRef = ref(database, "/shopping-cart");
+    onValue(dbRef,response => {
+      const shoppingCart = response.val()
+      let cartCounter=0
+      for (let item in shoppingCart){
+        const itemCount = shoppingCart[item].numberInCart;
+        cartCounter += itemCount;
+      }
+      setNumOfItemsInCart(cartCounter);
+    })
   }
 
   function getFilteredResults(categoryName){
@@ -34,6 +48,9 @@ function App() {
 
   useEffect(() => {
     getInventoryFromDB();
+
+    // TODO: move this to another useEffect??
+    getNumOfItemsInCart();
     // setFilteredInventory(getFilteredResults("electronics"));
   }, []);
 
@@ -41,6 +58,7 @@ function App() {
     <div className="App">
       <PromotionBanner announcement="Free shipping on orders over $35" />
       <Nav />
+      <p>Number of items in cart: {numOfItemsInCart}</p>
       <Header
         imageSrc={require("./assets/jed-villejo-pumko2FFxY0-unsplash.jpg")}
         imageAlt="three friends on sidewalk of busy street in the city laughing loudly - photographer: Jed Villejo"
