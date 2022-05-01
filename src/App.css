@@ -44,6 +44,15 @@ ul{
     margin:0;
 }
 
+h2{
+    font-size: 2.0rem;
+    /* text-align: center; */
+    font-weight: 400;
+    text-decoration: underline;
+    padding-bottom:40px;
+    /* TODO: add underline pseudo-element */
+}
+
 h3{
     font-size: 5.0rem;
     color:var(--secondary-font-color);
@@ -90,6 +99,12 @@ button:focus,
     /* background-color: var(--secondary-light-color); */
     background-color: var(--secondary-dark-color);
     color:var(--secondary-font-color);
+}
+
+.wrapper{
+    margin:0 auto;
+    width:90%;
+    max-width:1400px;
 }
 
 /**Promotion Banner **/
@@ -172,11 +187,43 @@ header .button:focus{
     background-color: white;
     width:350px;
     height:550px;
+    /* position:relative; */
+    cursor: pointer;
+    transition:0.3s;
 }
 
 .item:hover,
 .item:focus{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top:-20px;
+}
+
+/* .item-tile{
+    transition: 0.3s;
+}
+
+.item-tile:hover,
+.item-tile:hover{
+    
+} */
+
+.item-tile:hover + button{
+    opacity:1;
+}
+
+.item button{
+    opacity:0;
+    width:100%;
+    background-color: var(--tertiary-light-color);
+    font-weight: 600;
+    padding:20px 0;
+    transition:0.3s;
+}
+
+.item button:hover{
+    opacity: 1;
+    background-color:var(--secondary-dark-color);
+    color:var(--secondary-font-color);
 }
 
 .item>div {
@@ -206,10 +253,12 @@ header .button:focus{
 
 /** CATEGORY COMPONENT **/
 .category{
+    padding-top:70px;
     /* background-color: var(--tertiary-light-color); */
 }
 
 .items-container{
+    justify-content: center;
     display:flex;
     flex-wrap: wrap;
     gap:60px;

@@ -6,7 +6,7 @@ function Category(props) {
     const itemsInCategory=props.items;
 
     return (
-        <div className="category" id={id}>
+        <div className="category wrapper" id={id}>
             <h2>{name}</h2>
             <ul className="items-container">
                 {

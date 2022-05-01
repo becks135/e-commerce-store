@@ -56,6 +56,8 @@ function App() {
   }, []);
 
   return (
+    // TODO: add credit to fakedataAPI
+    // TODO add back to top button
     <div className="App">
       <PromotionBanner announcement="Free shipping on orders over $35" />
       <Nav cartCount={numOfItemsInCart} />

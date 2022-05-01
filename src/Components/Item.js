@@ -44,13 +44,13 @@ function Item(props){
     }
     
     return (
-        <div className="item">
-            <div>
-            <div className="item-image">
-                <img src={item.image} alt={item.title} />
-            </div>
-            <p className="item-title">{item.title}</p>
-            <p className="item-price">${item.price.toFixed(2)}</p>
+        <div className="item" tabIndex={0}>
+            <div className="item-tile">
+                <div className="item-image">
+                    <img src={item.image} alt={item.title} />
+                </div>
+                <p className="item-title">{item.title}</p>
+                <p className="item-price">${item.price.toFixed(2)}</p>
             </div>
             {/* //TODO:if inventory amount>0 then show add to cart button
                     else show sold out button and disable */}
