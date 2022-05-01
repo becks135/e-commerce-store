@@ -17,6 +17,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
     --tertiary-light-color:#F8F9FA;
     --primary-font-color:#1a1a1a;
     --secondary-font-color:white;
+    --accent-color:rgb(255, 112, 3);
 }
 
 /** GENERAL STYLES **/
@@ -36,6 +37,7 @@ body{
 p,
 h1,
 h2,
+h3,
 ul{
     padding:0;
     margin:0;
@@ -97,16 +99,26 @@ nav{
     width:100%;
     justify-content: space-between;
     background-color: var(--tertiary-light-color);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 30px 0px;
+    padding:0 20px;
 }
 
 nav ul{
     display:flex;
+    width:80%;
+    font-weight: 500;
 }
 
 nav button{
-    width:auto;
     background: none;
     border:none;
+}
+
+nav button:hover,
+nav button:focus{
+    background: none;
+    color:var(--secondary-light-color);
+    opacity:1;
 }
 
 /** HEADER **/
