@@ -18,6 +18,7 @@ import toggleCart from "../modules/toggleCart";
 function ShoppingCart(){
 
     const [shoppingCartItems, setShoppingCartItems] = useState([]);
+    const [subtotal, setSubtotal] = useState(0);
 
     function getShoppingCartItems() {
         const database = getDatabase(firebase);
@@ -38,10 +39,22 @@ function ShoppingCart(){
         })
     }
 
+    function calculateSubtotal(cart){
+        return cart.reduce((total, item) => {
+          return total + item.price * item.numberInCart;
+        },0);
+    }
+
+
     //TODO: only get shopping cart items when shopping cart displayed
     useEffect(()=>{
         getShoppingCartItems();
+        console.log({ shoppingCartItems });
+
+        // calculateSubtotal();
     },[])
+
+    
 
     return (
         <div className="shopping-cart">
@@ -66,7 +79,9 @@ function ShoppingCart(){
             }
             </ul>
             <div>
-                <p>Subtotal</p>
+                <p>
+                    Subtotal {calculateSubtotal(shoppingCartItems)}
+                </p>
                 <p>CA$XXXXX</p>
             </div>
             <Button label="Submit Order" />
