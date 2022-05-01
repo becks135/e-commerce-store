@@ -43,6 +43,13 @@ ul{
     margin:0;
 }
 
+h3{
+    font-size: 5.0rem;
+    color:var(--secondary-font-color);
+    opacity:0.85;
+    padding:20px 0;
+}
+
 ul{
     list-style: none;
 }
@@ -62,21 +69,22 @@ img{
     display: block;
 }
 
-button{
+button,
+.button {
     border:1px solid var(--secondary-dark-color);
     outline:none;
     padding:10px 20px;
     /* width:100%; */
     cursor: pointer;
-
     text-align:center;
     text-transform: uppercase;
-
     transition: all 0.5s ease;
 }
 
 button:hover,
-button:focus{
+button:focus,
+.button:hover,
+.button:focus {
     /* background-color: var(--secondary-light-color); */
     background-color: var(--secondary-dark-color);
     color:var(--secondary-font-color);
@@ -127,7 +135,25 @@ header{
     background-image: url("./assets/jed-villejo-pumko2FFxY0-unsplash.jpg");
     background-size: cover;
     background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+
+header .button{
+    color:var(--secondary-font-color);
+    border-color: var(--secondary-font-color);
+    font-weight: 600;
+}
+
+header .button:hover,
+header .button:focus{
+    background-color:var(--primary-light-color);
+    color:var(--secondary-dark-color);
+}
+
 
 /** ITEM COMPONENT **/
 .item,

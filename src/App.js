@@ -58,12 +58,9 @@ function App() {
   return (
     <div className="App">
       <PromotionBanner announcement="Free shipping on orders over $35" />
-      <Nav cartCount={numOfItemsInCart}/>
-      <Header
-        // imageSrc={require("./assets/jed-villejo-pumko2FFxY0-unsplash.jpg")}
-        // imageAlt="three friends on sidewalk of busy street in the city laughing loudly - photographer: Jed Villejo"
-        buttonLabel="Sign Up"
-      />
+      <Nav cartCount={numOfItemsInCart} />
+      <ShoppingCart />
+      <Header headerText="New Arrivals Just Dropped" buttonLabel="Shop Now"/>
 
       {/* database has separate category for men and women's clothing.
           need to combine the two categories to get one array for clothing */}
@@ -84,8 +81,6 @@ function App() {
         id="electronics"
         items={getFilteredResults("electronics")}
       />
-
-      <ShoppingCart />
     </div>
   );
 }
