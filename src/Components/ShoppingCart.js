@@ -54,35 +54,36 @@ function ShoppingCart(){
         // calculateSubtotal();
     },[])
 
+    useEffect(()=>{
+        setSubtotal(calculateSubtotal(shoppingCartItems))
+    },[shoppingCartItems]);
+
     
 
     return (
         <div className="shopping-cart">
             <div>
-                <h2>Shopping Cart</h2>
-                <Button label="X" handleFunction={toggleCart} />
+            <h2>Shopping Cart</h2>
+            <Button label="X" handleFunction={toggleCart} />
             </div>
             {/* <p>shopping cart</p> */}
             <ul>
             {
                 //if no items in shopping cart, display message indicating empty shopping cart
-                shoppingCartItems.length === 0?
-                    <li>No items in cart</li>
-                : 
-                    shoppingCartItems.map((item) => {
-                        return (
-                            <li key={item.id}>
-                                <ShoppingCartItem item={item}/>
-                            </li>
-                        )
-                    })
+                shoppingCartItems.length === 0 ? 
+                (<li>No items in cart</li>) : 
+                (shoppingCartItems.map((item) => {
+                    return (
+                    <li key={item.id}>
+                        <ShoppingCartItem item={item} />
+                    </li>
+                    )})
+                )
             }
             </ul>
-            <div>
-                <p>
-                    Subtotal {calculateSubtotal(shoppingCartItems)}
-                </p>
-                <p>CA$XXXXX</p>
+            <div className="subtotal">
+                <p>Subtotal</p>
+                <p>CA$ {subtotal.toFixed(2)}</p>
             </div>
             <Button label="Submit Order" />
         </div>

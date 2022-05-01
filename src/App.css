@@ -337,3 +337,8 @@ header .button:focus{
 .shopping-cart-item>div:last-child{
     width:calc(30% - 40px);
 }
+
+.subtotal{
+    display:flex;
+    justify-content:right;
+}
