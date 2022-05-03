@@ -12,7 +12,6 @@ import firebase from "../firebase";
 
 function Item(props){
     const item = props.item;
-    const [itemInStock, setItemInStock] = useState(true);
     
     function addItemToShoppingCart(itemId){
         const database = getDatabase(firebase);
