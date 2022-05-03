@@ -3,8 +3,7 @@ import Button from "./Button";
 
 //Modules
 import { getDatabase, ref, set, update, get } from "firebase/database";
-import { isInStock, removeOneItem } from "../modules/manageInventory";
-import { useState, useEffect } from "react";
+import { isInStock, removeItemFromInventory } from "../modules/manageInventory";
 
 
 //config
@@ -59,7 +58,7 @@ function Item(props){
                 isInStock(item.id)?
                     <Button label="Add to Cart" handleFunction={()=>{
                         handleAddToCartClick();
-                        removeOneItem(item.id);
+                        removeItemFromInventory(item.id);
                     }}/>
                 :
                     <p className="button">Out of Stock</p>            

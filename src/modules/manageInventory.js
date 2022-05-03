@@ -19,20 +19,27 @@ export function isInStock(itemID) {
     return inStock;
 };
 
-export function removeOneItem(itemID) {
-        const itemRef = ref(database,`story-inventory/${itemID}`);
-        get(itemRef).then(snapshot=>{
-            if (snapshot.exists()){
-                const itemCount = snapshot.val().number;
-                if (itemCount>0){
-                    update(itemRef, {"number": itemCount-1});
-                }
+export function removeItemFromInventory(itemID) {
+    const itemRef = ref(database,`story-inventory/${itemID}`);
+    get(itemRef).then(snapshot=>{
+        if (snapshot.exists()){
+            const itemCount = snapshot.val().number;
+            if (itemCount>0){
+                update(itemRef, {"number": itemCount-1});
             }
-        })
+        }
+    })
 }
 
-export function addOneItem(itemID) {
-
+export function addItemsToInventory(itemID, numberToAdd) {
+    const itemRef = ref(database, `story-inventory/${itemID}`);
+    get(itemRef).then((snapshot) => {
+        if (snapshot.exists()) {
+            let itemCount = snapshot.val().number;
+            update(itemRef, {"number": itemCount + numberToAdd });
+        }
+    });
+    
 }
 
 export function initialInventoryItemIDs(){

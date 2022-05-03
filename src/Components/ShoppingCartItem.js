@@ -3,6 +3,7 @@ import Button from "./Button";
 
 //Modules
 import { getDatabase, ref, remove, get } from "firebase/database";
+import { addItemsToInventory } from "../modules/manageInventory";
 
 //config
 import firebase from "../firebase";
@@ -17,9 +18,11 @@ function ShoppingCartItem(props){
         //search shopping cart for item
         get(shoppingCartItemRef)
             .then((snapshot) => {
+                //check number of items in shopping cart and add back to inventory
+                const numberToAddToInventory = snapshot.val().numberInCart;
+                addItemsToInventory(item.id,numberToAddToInventory);
                 //remove item from shopping cart database
                 remove(shoppingCartItemRef);
-                console.log("item removed?")
             })
             .catch((err) =>
                 //TODO: update error message
