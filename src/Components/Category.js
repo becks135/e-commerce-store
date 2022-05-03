@@ -1,3 +1,4 @@
+import CategoryFilter from "./CategoryFilter";
 import Item from "./Item";
 
 function Category(props) {
@@ -8,6 +9,7 @@ function Category(props) {
     return (
         <div className="category wrapper" id={id}>
             <h2>{name}</h2>
+            <CategoryFilter />
             <ul className="items-container">
                 {
                 itemsInCategory.map(item=>{
