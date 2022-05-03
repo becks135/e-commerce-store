@@ -1,6 +1,7 @@
 //Modules
 import { getDatabase, ref, onValue, push, remove } from "firebase/database";
 import { useEffect, useState } from "react";
+import { initialInventoryItemIDs } from "./modules/manageInventory.js";
 
 //config
 import firebase from "./firebase";
@@ -62,8 +63,8 @@ function App() {
       <PromotionBanner announcement="Free shipping on orders over $35" />
       <Nav cartCount={numOfItemsInCart} />
       <ShoppingCart />
-      <Header headerText="New Arrivals Just Dropped" buttonLabel="Shop Now"/>
-
+      <Header headerText="New Arrivals Just Dropped" buttonLabel="Shop Now" />
+      <div id="top"></div>
       {/* database has separate category for men and women's clothing.
           need to combine the two categories to get one array for clothing */}
       <Category
@@ -73,6 +74,7 @@ function App() {
           getFilteredResults("men's clothing")
         )}
       />
+
       <Category
         name="Jewellery"
         id="jewellery"
@@ -83,6 +85,10 @@ function App() {
         id="electronics"
         items={getFilteredResults("electronics")}
       />
+
+      <a href="#top" className="back-to-top">
+        Back to Top
+      </a>
     </div>
   );
 }
