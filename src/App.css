@@ -131,6 +131,7 @@ nav{
     background-color: var(--tertiary-light-color);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 30px 0px;
     padding:0 20px;
+    z-index:10;
 }
 
 nav ul{
