@@ -44,15 +44,6 @@ function ShoppingCartItem(props){
         </div>
         <p>{item.title}</p>
         <div>
-          {/* <label htmlFor="quantity">Qty:</label> 
-                 <input 
-                    type="number" 
-                    name="quantity" 
-                    id="quantity" 
-                    value={props.quantity}
-                    onChange={()=>{
-                        console.log("changed!")
-                    }} /> */}
           <p>Qty:{item.numberInCart}</p>
           <p>CA${(item.price * item.numberInCart).toFixed(2)}</p>
           <Button label="Remove" handleFunction={handleRemoveButton} />
