@@ -20,7 +20,15 @@ export function isInStock(itemID) {
 };
 
 export function removeOneItem(itemID) {
-    //if sold out, return error message?
+        const itemRef = ref(database,`story-inventory/${itemID}`);
+        get(itemRef).then(snapshot=>{
+            if (snapshot.exists()){
+                const itemCount = snapshot.val().number;
+                if (itemCount>0){
+                    update(itemRef, {"number": itemCount-1});
+                }
+            }
+        })
 }
 
 export function addOneItem(itemID) {

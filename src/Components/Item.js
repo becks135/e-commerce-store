@@ -3,7 +3,7 @@ import Button from "./Button";
 
 //Modules
 import { getDatabase, ref, set, update, get } from "firebase/database";
-import { isInStock } from "../modules/manageInventory";
+import { isInStock, removeOneItem } from "../modules/manageInventory";
 import { useState, useEffect } from "react";
 
 
@@ -55,14 +55,14 @@ function Item(props){
                 <p className="item-title">{item.title}</p>
                 <p className="item-price">${item.price.toFixed(2)}</p>
             </div>
-            {/* //TODO:if inventory amount>0 then show add to cart button
-                    else show sold out button and disable */}
-            {
-                
-            isInStock(item.id)?
-                <Button label="Add to Cart" handleFunction={handleAddToCartClick}/>
-            :
-                <p className="button">Out of Stock</p>            
+            {  
+                isInStock(item.id)?
+                    <Button label="Add to Cart" handleFunction={()=>{
+                        handleAddToCartClick();
+                        removeOneItem(item.id);
+                    }}/>
+                :
+                    <p className="button">Out of Stock</p>            
             }
         </div>
     );
