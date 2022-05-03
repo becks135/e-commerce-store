@@ -304,6 +304,8 @@ header .button:focus{
     width:600px;
     background-color: var(--secondary-font-color);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow-y: scroll;
+    max-height: calc(100vh - 100px);
 }
 
 .show-cart{
