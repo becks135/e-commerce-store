@@ -1,7 +1,6 @@
 //Modules
 import { getDatabase, ref, onValue, push, remove } from "firebase/database";
 import { useEffect, useState } from "react";
-import { initialInventoryItemIDs } from "./modules/manageInventory.js";
 
 //config
 import firebase from "./firebase";
@@ -15,6 +14,7 @@ import Nav from "./Components/Nav";
 import Category from "./Components/Category";
 import Header from "./Components/Header";
 import ShoppingCart from "./Components/ShoppingCart";
+
 
 function App() {
   const [inventory, setInventory] = useState([]);

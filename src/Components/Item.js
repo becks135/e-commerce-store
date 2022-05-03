@@ -3,12 +3,16 @@ import Button from "./Button";
 
 //Modules
 import { getDatabase, ref, set, update, get } from "firebase/database";
+import { isInStock } from "../modules/manageInventory";
+import { useState, useEffect } from "react";
+
 
 //config
 import firebase from "../firebase";
 
 function Item(props){
     const item = props.item;
+    const [itemInStock, setItemInStock] = useState(true);
     
     function addItemToShoppingCart(itemId){
         const database = getDatabase(firebase);
@@ -54,7 +58,13 @@ function Item(props){
             </div>
             {/* //TODO:if inventory amount>0 then show add to cart button
                     else show sold out button and disable */}
-            <Button label="Add to Cart" handleFunction={handleAddToCartClick}/>
+            {
+                
+            isInStock(item.id)?
+                <Button label="Add to Cart" handleFunction={handleAddToCartClick}/>
+            :
+                <p className="button">Out of Stock</p>            
+            }
         </div>
     );
 }

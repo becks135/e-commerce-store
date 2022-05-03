@@ -9,10 +9,14 @@ const inventoryRef = ref(database,"story-inventory");
 //TODO:correct spelling error - story-inventory
 
 
-export function itemSoldOut(itemID) {
-    onValue(inventoryRef, (response) => {
-        console.log("inventory", response.val());
-    });
+export function isInStock(itemID) {
+    let inStock = false;
+    const itemRef = ref(database,`story-inventory/${itemID}`);
+    onValue(itemRef,response =>{
+        const numberInStock = response.val().number;
+        numberInStock > 0 ? inStock = true : inStock = false;
+    })
+    return inStock;
 };
 
 export function removeOneItem(itemID) {

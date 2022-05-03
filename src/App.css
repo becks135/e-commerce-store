@@ -212,21 +212,37 @@ header .button:focus{
     
 } */
 
-.item-tile:hover + button{
+.item-tile:hover + button,
+.item-tile:hover + .button{
     opacity:1;
 }
 
-.item button{
+.item button,
+.item .button{
     opacity:0;
     width:100%;
-    background-color: var(--tertiary-light-color);
     font-weight: 600;
     padding:20px 0;
     transition:0.3s;
 }
 
-.item button:hover{
+.item button{
+    background-color: var(--tertiary-light-color);
+}
+
+.item .button{
+    background-color:darkgrey;
+    border-color: darkgrey;
+    color:var(--primary-font-color);
+    cursor:default;
+}
+
+.item button:hover,
+.item .button:hover{
     opacity: 1;
+}
+
+.item button:hover{
     background-color:var(--secondary-dark-color);
     color:var(--secondary-font-color);
 }
