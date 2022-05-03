@@ -70,6 +70,7 @@ function App() {
       <Category
         name="Clothing"
         id="clothing"
+        filter={true}
         items={getFilteredResults("women's clothing").concat(
           getFilteredResults("men's clothing")
         )}
@@ -78,11 +79,13 @@ function App() {
       <Category
         name="Jewellery"
         id="jewellery"
+        filter={false}
         items={getFilteredResults("jewelery")}
       />
       <Category
         name="Electronics"
         id="electronics"
+        filter={false}
         items={getFilteredResults("electronics")}
       />
 
