@@ -89,6 +89,14 @@ function App() {
         items={getFilteredResults("electronics")}
       />
 
+      <footer>
+        <p>
+          Created by Nicole Beckles at 
+          <a href="junocollege.com">Juno College</a>
+        </p>
+        <p>API data source:fakeStoreAPI.com</p>
+      </footer>
+
       <a href="#top" className="back-to-top">
         Back to Top
       </a>

@@ -120,6 +120,22 @@ button:focus,
     max-width:2000px;
 }
 
+select{
+    padding:5px 10px;
+    text-transform:capitalize;
+    font-family: 'Montserrat', sans-serif;
+    margin:10px;
+    margin-bottom:30px;
+    border:0;
+    background:none;
+    cursor:pointer;
+}
+
+select:hover,
+select:focus{
+    opacity: 0.7;
+}
+
 /**Promotion Banner **/
 .top-banner{
     text-align: center;
