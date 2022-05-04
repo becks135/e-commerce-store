@@ -163,6 +163,8 @@ nav .outer-wrapper{
 
 .navigation-menu{
     width:80%;
+    display:flex;
+    align-items: center;
 }
 
 .menu-button{
@@ -182,6 +184,12 @@ nav ul{
     display:flex;
     font-weight: 500;
     align-items:center;
+}
+
+.navigation-menu a:hover{
+    text-decoration: underline var(--primary-dark-color);
+    text-decoration-thickness: 0.25rem;
+    text-underline-offset: 1rem;
 }
 
 nav button{
@@ -497,6 +505,7 @@ footer a:hover{
     }
 
     .navigation-menu {
+        display:block;
         order:-1;
         position: absolute;
         left: -1000px;
