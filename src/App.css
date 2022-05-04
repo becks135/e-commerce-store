@@ -232,17 +232,11 @@ header .button:focus{
     margin-top:-20px;
 }
 
-/* .item-tile{
-    transition: 0.3s;
-}
-
-.item-tile:hover,
-.item-tile:hover{
-    
-} */
 
 .item-tile:hover + button,
-.item-tile:hover + .button{
+.item-tile:hover + .button,
+.item-tile:focus + button,
+.item-tile:focus + .button{
     opacity:1;
 }
 
@@ -267,11 +261,14 @@ header .button:focus{
 }
 
 .item button:hover,
-.item .button:hover{
+.item .button:hover,
+.item button:focus,
+.item .button:focus{
     opacity: 1;
 }
 
-.item button:hover{
+.item button:hover,
+.item button:focus{
     background-color:var(--secondary-dark-color);
     color:var(--secondary-font-color);
 }
@@ -365,7 +362,8 @@ header .button:focus{
     border:none;
 }
 
-.shopping-cart button:hover{
+.shopping-cart button:hover,
+.shopping-cart button:focus{
     color:var(--accent-color)
 }
 
@@ -408,7 +406,8 @@ header .button:focus{
     text-transform: none;
 }
 
-.shopping-cart-item button:hover{
+.shopping-cart-item button:hover,
+.shopping-cart-item button:focus{
     text-decoration: underline;
 }
 
@@ -446,4 +445,34 @@ header .button:focus{
     text-align: right;
     margin-top:200vh;
     margin-right:25px;
+}
+
+/** FOOTER **/
+footer{
+    text-align: center;
+    background-color: var(--accent-color);
+    padding:15px 0;
+    color:var(--secondary-font-color);
+    line-height: 1.75;
+}
+
+footer a{
+    padding:0;
+}
+
+footer a:hover{
+    font-weight: bold;
+}
+
+/** MEDIA QUERIES **/
+@media(max-width:850px){
+    .items-container{
+        gap:20px;
+    }
+}
+
+@media(max-width:650px){
+    .shopping-cart{
+        width:100%;
+    }
 }

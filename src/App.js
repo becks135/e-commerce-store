@@ -91,10 +91,20 @@ function App() {
 
       <footer>
         <p>
-          Created by Nicole Beckles at 
-          <a href="junocollege.com">Juno College</a>
+          Created by{" "}
+          <a href="https://www.nicolebeckles.dev" target="_blank" rel="noopener noreferrer">
+            Nicole Beckles
+          </a>{" "}
+          at{" "}
+          <a
+            href="https://junocollege.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Juno College
+          </a>
         </p>
-        <p>API data source:fakeStoreAPI.com</p>
+        <p>API data source:<a href="https://fakestoreapi.com" target="_blank" rel="noopener noreferrer">fakeStoreAPI.com</a></p>
       </footer>
 
       <a href="#top" className="back-to-top">
