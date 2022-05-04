@@ -492,6 +492,10 @@ footer a:hover{
         width:100%;
     }
 
+    nav .outer-wrapper{
+        padding-left:50px;
+    }
+
     .navigation-menu {
         order:-1;
         position: absolute;
