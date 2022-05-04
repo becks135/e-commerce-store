@@ -13,15 +13,12 @@ function Category(props) {
     useEffect(()=>{
         setFilteredItems(props.items);
     },[props.items])
-    // const [uniqueSubCategories, setUniqueSubCategories] = useState([]);
 
     function getSubCategories(){
         //get list of categories
-        // const subCategories = itemsInCategory.map(item => item.category);
         const subCategories = itemsInCategory.map((item) => item.category);
 
         //get list of unique subcategories
-        // setUniqueSubCategories([...new Set(subCategories)]);
         uniqueSubCategories = [...new Set(subCategories)];
     }
 
@@ -39,10 +36,6 @@ function Category(props) {
         }
         setSelectedSubcategory(subCategory);
     }
-
-    // useEffect(()=>{
-    //     getSubCategories();
-    // },[])
 
     function CategoryFilter() {
         getSubCategories();

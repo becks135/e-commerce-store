@@ -26,7 +26,6 @@ function Item(props){
             }
             //if item does not exist, add item object to the database
             else {
-                console.log("item not in cart.adding now");
                 //create object to add to shopping cart database
                 //TODO: move this to it's own function
                 const { id, image, title, price } = item;
@@ -42,7 +41,6 @@ function Item(props){
 
     function handleAddToCartClick(){
         addItemToShoppingCart(item.id);
-        //TODO: update inventory amount in inventory db
     }
     
     return (

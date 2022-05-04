@@ -21,11 +21,11 @@ function Nav(props){
           <a href="#home">
             <h1>Sahara</h1>
           </a>
-          <div class="navigation-menu">
-            <button class="menu-button" aria-hidden="true" onClick={toggleMenu}>
-              <span class="line"></span>
-              <span class="line"></span>
-              <span class="line"></span>
+          <div className="navigation-menu">
+            <button className="menu-button" aria-hidden="true" onClick={toggleMenu}>
+              <span className="line"></span>
+              <span className="line"></span>
+              <span className="line"></span>
             </button>
             <ul>
               <li>

@@ -32,7 +32,6 @@ function ShoppingCartItem(props){
 
     function handleRemoveButton(){
         removeItemFromCart(item.id)
-        //TODO: update inventory amount in inventory db
     }
 
 

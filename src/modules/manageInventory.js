@@ -52,13 +52,3 @@ export function initialInventoryItemIDs(){
     })
 }
 
-
-// export function updateItemID(itemID){
-//     const itemRef = ref(database,`story-inventory/${itemID}`);
-
-//     get(itemRef).then(snapshot=>{
-//         if (snapshot.exists()){
-//             update(itemRef, {"id": itemID})
-//         }
-//     })
-// }

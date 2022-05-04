@@ -1,6 +1,8 @@
 //Modules
 import { getDatabase, ref, onValue } from "firebase/database";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 //config
 import firebase from "./firebase";
@@ -92,7 +94,11 @@ function App() {
       <footer>
         <p>
           Created by{" "}
-          <a href="https://www.nicolebeckles.dev" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.nicolebeckles.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Nicole Beckles
           </a>{" "}
           at{" "}
@@ -104,11 +110,20 @@ function App() {
             Juno College
           </a>
         </p>
-        <p>API data source:<a href="https://fakestoreapi.com" target="_blank" rel="noopener noreferrer">fakeStoreAPI.com</a></p>
+        <p>
+          API data source:
+          <a
+            href="https://fakestoreapi.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            fakeStoreAPI.com
+          </a>
+        </p>
       </footer>
 
       <a href="#top" className="back-to-top">
-        Back to Top
+        <FontAwesomeIcon icon={faAngleUp} className="close-cart-icon" />
       </a>
     </div>
   );

@@ -38,7 +38,6 @@ function ShoppingCart(){
 
             //set shoppingCartItems state variables to newly created array containing shopping cart items from database
             setShoppingCartItems(cartArray);
-            console.log(cartArray);
         })
     }
 
