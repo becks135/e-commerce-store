@@ -2,20 +2,67 @@ import CartIcon from "./CartIcon";
 
 
 function Nav(props){
-    return(
-        <nav>
-            <div className="outer-wrapper">
-                <a href="#home"><h1>Sahara</h1></a>
-                <ul>
-                    <li><a href="#clothing">Clothing</a></li>
-                    <li><a href="#jewellery">Jewellery</a></li>
-                    <li><a href="#electronics">Electronics</a></li>
-                </ul>
+    const menuButton = document.querySelector(".menu-button");
+    const navMenu = document.querySelector(".navigation-menu");
+    const navLinks = document.querySelectorAll(".top-nav-links");
 
-                <CartIcon cartCount={props.cartCount}/>
-            </div>
-        </nav>
-    )
+    const toggleMenu = () => {
+        menuButton.classList.toggle("active");
+        navMenu.classList.toggle("open-menu");
+    }
+
+    const hideMenu = () => {
+        menuButton.classList.remove("active");
+        navMenu.classList.remove("open-menu");
+    }
+
+    return (
+      <nav>
+        <div className="outer-wrapper">
+          <a href="#home">
+            <h1>Sahara</h1>
+          </a>
+          <div class="navigation-menu">
+            <button class="menu-button" aria-hidden="true" onClick={toggleMenu}>
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </button>
+            <ul>
+              <li>
+                <a
+                  href="#clothing"
+                  className="top-nav-links"
+                  onClick={hideMenu}
+                >
+                  Clothing
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#jewellery"
+                  className="top-nav-links"
+                  onClick={hideMenu}
+                >
+                  Jewellery
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#electronics"
+                  className="top-nav-links"
+                  onClick={hideMenu}
+                >
+                  Electronics
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <CartIcon cartCount={props.cartCount} />
+        </div>
+      </nav>
+    );
 }
 
 export default Nav;
