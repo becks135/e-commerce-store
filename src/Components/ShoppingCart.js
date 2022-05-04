@@ -2,12 +2,15 @@
 import Button from "./Button";
 import ShoppingCartItem from "./ShoppingCartItem";
 
+
 //modules
 import {
     getDatabase,
     ref,
     onValue
 } from "firebase/database";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 //config
 import firebase from "../firebase";
@@ -63,10 +66,11 @@ function ShoppingCart(){
     return (
         <div className="shopping-cart">
             <div>
-            <h2>Shopping Cart</h2>
-            <Button label="X" handleFunction={toggleCart} />
+                <h2>Shopping Cart</h2>
+                <button onClick={(toggleCart)}>
+                    <FontAwesomeIcon icon={faCircleXmark} className="close-cart-icon" />
+                </button>
             </div>
-            {/* <p>shopping cart</p> */}
             <ul>
             {
                 //if no items in shopping cart, display message indicating empty shopping cart

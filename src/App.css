@@ -17,7 +17,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
     --tertiary-light-color:#F8F9FA;
     --primary-font-color:#1a1a1a;
     --secondary-font-color:white;
-    --accent-color:rgb(255, 112, 3);
+    --accent-color:rgb(62, 0, 77);
 }
 
 /** GENERAL STYLES **/
@@ -50,12 +50,15 @@ h1{
 }
 
 h2{
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     /* text-align: center; */
-    font-weight: 400;
-    text-decoration: underline;
+    /* font-weight: 400; */
     padding-bottom:40px;
-    /* TODO: add underline pseudo-element */
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 4px;
+    line-height: 30px;
+    text-transform: uppercase;
 }
 
 h3{
@@ -328,11 +331,30 @@ header .button:focus{
     top:0;
     right:-700px;
     width:600px;
+    padding:30px;
     background-color: var(--secondary-font-color);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     overflow-y: scroll;
     max-height: calc(100vh - 100px);
     z-index:20;
+}
+
+.shopping-cart h2{
+    padding:0;
+}
+
+.shopping-cart button{
+    padding:0;
+    background:none;
+    border:none;
+}
+
+.shopping-cart button:hover{
+    color:var(--accent-color)
+}
+
+.close-cart-icon{
+    font-size:3rem;
 }
 
 .show-cart{
@@ -343,6 +365,7 @@ header .button:focus{
     display:flex;
     justify-content: space-between;
     padding:20px;
+    align-items: center;
 }
 
 .shopping-cart-item{
@@ -363,6 +386,16 @@ header .button:focus{
     width:70%;
 }
 
+.shopping-cart-item button{
+    color:var(--primary-dark-color);
+    font-weight: bold;
+    text-transform: none;
+}
+
+.shopping-cart-item button:hover{
+    text-decoration: underline;
+}
+
 .shopping-cart-item>div:last-child{
     width:calc(30% - 40px);
 }
@@ -370,6 +403,24 @@ header .button:focus{
 .subtotal{
     display:flex;
     justify-content:right;
+    gap:10px;
+    padding-right:40px;
+    font-weight: bold;
+}
+
+.shopping-cart>button{
+    width:100%;
+    padding:10px 20px;
+    margin-top:20px;
+    background-color: var(--accent-color);
+    font-weight: bold;
+    color: var(--secondary-font-color);
+}
+
+.shopping-cart>button:hover,
+.shopping-cart>button:focus{
+    opacity: 0.8;
+    color: var(--secondary-font-color);
 }
 
 .back-to-top{
