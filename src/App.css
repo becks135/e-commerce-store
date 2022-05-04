@@ -286,13 +286,13 @@ header .button:focus{
 
 .item button:hover,
 .item .button:hover,
-.item button:focus,
-.item .button:focus{
+.item button:focus-visible,
+.item .button:focus-visible{
     opacity: 1;
 }
 
 .item button:hover,
-.item button:focus{
+.item button:focus-visible{
     background-color:var(--secondary-dark-color);
     color:var(--secondary-font-color);
 }
@@ -565,5 +565,15 @@ footer a:hover{
 
     .top-banner{
         display:none;
+    }
+
+    .items-container{
+        gap:50px;
+    }
+
+    .item button,
+    .item .button{
+        opacity:1;
+        width:80%;
     }
 }
