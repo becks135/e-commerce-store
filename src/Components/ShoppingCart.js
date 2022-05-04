@@ -49,12 +49,9 @@ function ShoppingCart(){
     }
 
 
-    //TODO: only get shopping cart items when shopping cart displayed
     useEffect(()=>{
         getShoppingCartItems();
-        console.log({ shoppingCartItems });
 
-        // calculateSubtotal();
     },[])
 
     useEffect(()=>{

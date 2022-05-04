@@ -12,7 +12,6 @@ function Category(props) {
     
     useEffect(()=>{
         setFilteredItems(props.items);
-        console.log({filteredItems})
     },[props.items])
     // const [uniqueSubCategories, setUniqueSubCategories] = useState([]);
 

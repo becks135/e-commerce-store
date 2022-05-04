@@ -1,5 +1,5 @@
 //Modules
-import { getDatabase, ref, onValue, push, remove } from "firebase/database";
+import { getDatabase, ref, onValue } from "firebase/database";
 import { useEffect, useState } from "react";
 
 //config

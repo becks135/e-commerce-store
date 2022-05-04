@@ -1,5 +1,5 @@
 //Modules
-import { getDatabase, ref, remove, get, onValue, update } from "firebase/database";
+import { getDatabase, ref, get, onValue, update } from "firebase/database";
 
 //config
 import firebase from "../firebase";

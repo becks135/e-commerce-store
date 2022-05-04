@@ -1,4 +1,3 @@
-import Button from "./Button";
 
 function Header(props) {
     return(

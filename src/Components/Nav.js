@@ -4,7 +4,6 @@ import CartIcon from "./CartIcon";
 function Nav(props){
     const menuButton = document.querySelector(".menu-button");
     const navMenu = document.querySelector(".navigation-menu");
-    const navLinks = document.querySelectorAll(".top-nav-links");
 
     const toggleMenu = () => {
         menuButton.classList.toggle("active");
