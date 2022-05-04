@@ -5,7 +5,6 @@ import Button from "./Button";
 import { getDatabase, ref, set, update, get } from "firebase/database";
 import { isInStock, removeItemFromInventory } from "../modules/manageInventory";
 
-
 //config
 import firebase from "../firebase";
 
@@ -35,7 +34,7 @@ function Item(props){
             }
         })
         .catch((err) =>
-            console.log("something went wrong. please try again", err)
+            alert("something went wrong. please try again")
         );
     }
 
@@ -52,6 +51,7 @@ function Item(props){
                 <p className="item-title">{item.title}</p>
                 <p className="item-price">${item.price.toFixed(2)}</p>
             </div>
+            {/* if item in stock, show in stock button. otherwise, show disabled out of stock button */}
             {  
                 isInStock(item.id)?
                     <Button label="Add to Cart" handleFunction={()=>{

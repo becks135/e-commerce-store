@@ -2,7 +2,6 @@
 import Button from "./Button";
 import ShoppingCartItem from "./ShoppingCartItem";
 
-
 //modules
 import {
     getDatabase,
@@ -47,17 +46,13 @@ function ShoppingCart(){
         },0);
     }
 
-
     useEffect(()=>{
         getShoppingCartItems();
-
     },[])
 
     useEffect(()=>{
         setSubtotal(calculateSubtotal(shoppingCartItems))
     },[shoppingCartItems]);
-
-    
 
     return (
         <div className="shopping-cart">
@@ -74,9 +69,9 @@ function ShoppingCart(){
                 (<li>No items in cart</li>) : 
                 (shoppingCartItems.map((item) => {
                     return (
-                    <li key={item.id}>
-                        <ShoppingCartItem item={item} />
-                    </li>
+                        <li key={item.id}>
+                            <ShoppingCartItem item={item} />
+                        </li>
                     )})
                 )
             }

@@ -1,6 +1,5 @@
 import CartIcon from "./CartIcon";
 
-
 function Nav(props){
     const menuButton = document.querySelector(".menu-button");
     const navMenu = document.querySelector(".navigation-menu");

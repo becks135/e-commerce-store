@@ -25,16 +25,13 @@ function ShoppingCartItem(props){
                 remove(shoppingCartItemRef);
             })
             .catch((err) =>
-                //TODO: update error message
-                console.log("something went wrong. please try again", err)
+                alert("something went wrong. please try again")
             );
     }
 
     function handleRemoveButton(){
         removeItemFromCart(item.id)
     }
-
-
 
     return (
       <div className="shopping-cart-item">

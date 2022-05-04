@@ -17,11 +17,9 @@ import Category from "./Components/Category";
 import Header from "./Components/Header";
 import ShoppingCart from "./Components/ShoppingCart";
 
-
 function App() {
   const [inventory, setInventory] = useState([]);
   const [numOfItemsInCart, setNumOfItemsInCart] = useState(0);
-  // const [filteredInventory, setFilteredInventory] = useState([]);
 
   function getInventoryFromDB(){
     const database = getDatabase(firebase);
@@ -45,22 +43,15 @@ function App() {
 
   function getFilteredResults(categoryName){
     const filteredResult = inventory.filter(item=>item.category===categoryName);
-    // console.log(inventory);
     return filteredResult;
   }
 
-
   useEffect(() => {
     getInventoryFromDB();
-
-    // TODO: move this to another useEffect??
     getNumOfItemsInCart();
-    // setFilteredInventory(getFilteredResults("electronics"));
   }, []);
 
   return (
-    // TODO: add credit to fakedataAPI
-    // TODO add back to top button
     <div className="App">
       <PromotionBanner announcement="Free shipping on orders over $35" />
       <Nav cartCount={numOfItemsInCart} />

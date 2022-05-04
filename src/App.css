@@ -51,8 +51,6 @@ h1{
 
 h2{
     font-size: 1.8rem;
-    /* text-align: center; */
-    /* font-weight: 400; */
     padding-bottom:40px;
     font-style: normal;
     font-weight: bold;
@@ -93,7 +91,6 @@ button,
     border:1px solid var(--secondary-dark-color);
     outline:none;
     padding:10px 20px;
-    /* width:100%; */
     cursor: pointer;
     text-align:center;
     text-transform: uppercase;
@@ -104,7 +101,6 @@ button:hover,
 button:focus,
 .button:hover,
 .button:focus {
-    /* background-color: var(--secondary-light-color); */
     background-color: var(--secondary-dark-color);
     color:var(--secondary-font-color);
 }
@@ -168,7 +164,6 @@ nav .outer-wrapper{
 }
 
 .menu-button{
-    /* background-color: var(--secondary-dark-color); */
     display:none;
 }
 
@@ -240,19 +235,16 @@ header .button:focus{
 }
 
 .item{
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
     border-radius: 5px;
     background-color: white;
     width:350px;
     height:550px;
-    /* position:relative; */
     cursor: pointer;
     transition:0.3s;
 }
 
 .item:hover,
 .item:focus{
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
     margin-top:-20px;
 }
 
@@ -312,7 +304,6 @@ header .button:focus{
 
 .item-title{
     height:15%;
-    /* text-transform: uppercase; */
     text-align: center;
     font-weight: 500;
 }
@@ -325,7 +316,6 @@ header .button:focus{
 /** CATEGORY COMPONENT **/
 .category{
     padding-top:70px;
-    /* background-color: var(--tertiary-light-color); */
 }
 
 .items-container{
@@ -417,7 +407,6 @@ header .button:focus{
 
 .cart-item-image{
     width:10%;
-    /* height:100px; */
 }
 
 .shopping-cart-item>p{
@@ -566,10 +555,6 @@ footer a:hover{
     .top-banner{
         display:none;
     }
-
-    /* .items-container{
-        gap:65px;
-    } */
 
     .item button,
     .item .button{
