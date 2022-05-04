@@ -567,9 +567,9 @@ footer a:hover{
         display:none;
     }
 
-    .items-container{
+    /* .items-container{
         gap:65px;
-    }
+    } */
 
     .item button,
     .item .button{
@@ -583,5 +583,9 @@ footer a:hover{
 
     header{
         height:600px;
+    }
+
+    .item{
+        margin-bottom: 50px;
     }
 }
