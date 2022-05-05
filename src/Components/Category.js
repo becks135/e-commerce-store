@@ -11,8 +11,22 @@ function Category(props) {
     const [selectedSubCategory, setSelectedSubcategory] = useState("All");
     
     useEffect(()=>{
-        setFilteredItems(props.items);
-    },[props.items])
+        setFilteredItems(itemsInCategory);
+
+        const allItemsInCategory = [...itemsInCategory];
+        const subCategory = document.querySelector(`#${id}-category-filter`);
+
+        if (subCategory) {
+            if (subCategory.value === "all") {
+            setFilteredItems(allItemsInCategory);
+            } else{
+                const itemsInSubCategory = allItemsInCategory.filter((item) => {
+                    return item.category === subCategory.value;
+                });
+                setFilteredItems(itemsInSubCategory);
+            }
+        }
+    },[id, itemsInCategory]);
 
     function getSubCategories(){
         //get list of categories
@@ -44,7 +58,8 @@ function Category(props) {
                 <label htmlFor="category-filter">Filter</label>
                 <select
                     name="category-filter"
-                    id="category-filter"
+                    id={`${id}-category-filter`}
+                    className="category-filter"
                     onChange={(e) => {
                         handleFilterChange(e);
                     }}
