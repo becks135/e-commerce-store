@@ -98,9 +98,9 @@ button,
 }
 
 button:hover,
-button:focus,
+button:focus-visible,
 .button:hover,
-.button:focus {
+.button:focus-visible {
     background-color: var(--secondary-dark-color);
     color:var(--secondary-font-color);
 }
