@@ -1,17 +1,16 @@
+import { useState } from "react";
 import CartIcon from "./CartIcon";
 
 function Nav(props){
-    const menuButton = document.querySelector(".menu-button");
-    const navMenu = document.querySelector(".navigation-menu");
-
+    const [showMenu, setShowMenu] = useState(false);
+    
     const toggleMenu = () => {
-        menuButton.classList.toggle("active");
-        navMenu.classList.toggle("open-menu");
+        const newMenuStatus = !showMenu;
+        setShowMenu(newMenuStatus);
     }
 
     const hideMenu = () => {
-        menuButton.classList.remove("active");
-        navMenu.classList.remove("open-menu");
+        setShowMenu(false);
     }
 
     return (
@@ -20,8 +19,14 @@ function Nav(props){
           <a href="#home">
             <h1>Sahara</h1>
           </a>
-          <div className="navigation-menu">
-            <button className="menu-button" aria-hidden="true" onClick={toggleMenu}>
+          <div 
+            className={showMenu?"navigation-menu open-menu":"navigation-menu"}
+          >
+            <button 
+              className={showMenu?"menu-button active":"menu-button"}
+              aria-hidden="true" 
+              onClick={toggleMenu}
+            >
               <span className="line"></span>
               <span className="line"></span>
               <span className="line"></span>
